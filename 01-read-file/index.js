@@ -1,8 +1,9 @@
-// const text = require('./text.txt');
+const fs = require('fs');
+const path = require('node:path');
+const dir = path.dirname('01-read-file/text.txt')
+const file = path.join(dir, 'text.txt')
 
-let fs = require('fs');
-
-fs.readFile('01-read-file/text.txt', 'utf8', (err, data) => {
+fs.readFile(file, 'utf8', (err, data) => {
     if (err) throw err;
     console.log(data);
 });
